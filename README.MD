@@ -9,7 +9,7 @@ Quar is an open sourced library that allows the Bukkit API to be used a lotl eas
 
 ## Contributing
 
-Any contributions are appreciated and will be carefully reviewed. Please read our [contributor code of conduct](https://github.com/GardeningTool/Quar/blob/main/CONTRIBUTOR_CODE_OF_CONDUCT.md) before contributing.
+Any contributions are appreciated and will be carefully reviewed. Please read our [contributor code of conduct](https://github.com/GardeningTool/Quar/blob/main/CONTRIBUTOR_CODE_OF_CONDUCT.MD) before contributing.
 
 ## Developers
 [GardeningTool](https://github.com/GardeningTool/)
