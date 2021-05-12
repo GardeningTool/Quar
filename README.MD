@@ -1,7 +1,7 @@
 # Quar
 
 ## What is Quar?
-Quar is an open sourced library that allows configuration files on the Bukkit API to be handled more efficient, faster and easier.
+Quar is an open sourced library that allows the Bukkit API to be used a lotl easier. It simplifies usage of Bukkit's API through our custom configuration system, custom ItemBuilders, etc.
 
 ## Setup
 [Learn more](https://jitpack.io/#GardeningTool/Quar)
@@ -10,3 +10,8 @@ Quar is an open sourced library that allows configuration files on the Bukkit AP
 [GardeningTool](https://github.com/GardeningTool/)
 
 [Tecnio](https://github.com/Tecnio/)
+
+## Requirements
+
+- Java 8
+- Spigot (obviously)
