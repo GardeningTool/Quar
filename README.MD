@@ -1,7 +1,7 @@
 # Quar
 
 ## What is Quar?
-Quar is an open sourced library that allows the Bukkit API to be used a lot more efficient, faster and easier. It simplifies usage of Bukkit's API through our custom configuration system, custom ItemBuilders, etc.
+Quar is an open  library that allows the Bukkit API to be used a lot more efficient, faster and easier. It simplifies usage of Bukkit's API through our custom configuration system, custom ItemBuilders, etc. Quar also features an annotation based configuration system to be used alongside Bukkit's configuration (an example of which is shown in this repository).
 
 ## Setup
 
@@ -20,3 +20,7 @@ Any contributions are appreciated and will be carefully reviewed. Please read ou
 
 - Java 8
 - Spigot (obviously)
+
+## Credits
+
+Thanks to Quar for letting us use his name for this project.
