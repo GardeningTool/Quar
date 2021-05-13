@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * Our abstract manager class in used by our managers.
+ * An abstract manager class used by manager subclasses.
  *
  * @param <T> The type of the manager.
  */
