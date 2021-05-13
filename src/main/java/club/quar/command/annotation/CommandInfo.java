@@ -35,5 +35,5 @@ public @interface CommandInfo {
     /**
      * Make the command usable only by a player or players and console.
      */
-    boolean requirePlayer();
+    boolean requirePlayer() default false;
 }

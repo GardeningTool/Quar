@@ -3,6 +3,7 @@ package club.quar.plugin;
 import club.quar.command.QCommand;
 import club.quar.command.annotation.CommandInfo;
 import club.quar.config.manager.QuarConfigManager;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
@@ -13,6 +14,7 @@ import java.util.stream.Stream;
 
 public abstract class QuarPlugin extends JavaPlugin {
 
+    @Getter
     protected static QuarPlugin instance;
     protected final QuarConfigManager quarConfigManager = new QuarConfigManager();
     protected final PluginManager pluginManager = Bukkit.getPluginManager();
