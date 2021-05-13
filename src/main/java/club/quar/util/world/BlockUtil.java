@@ -26,7 +26,7 @@ public final class BlockUtil {
      * @param location The location of the block requested.
      * @return The block in the given position.
      */
-    public Block getBlockAsync(Location location) {
+    public static Block getBlockAsync(Location location) {
         if (location.getWorld().isChunkLoaded(location.getBlockX() >> 4, location.getBlockZ() >> 4)) {
             return location.getWorld().getBlockAt(location);
         } else {
@@ -44,7 +44,7 @@ public final class BlockUtil {
      * @return The block in the given position.
      */
     @Deprecated
-    public Block getBlockAsyncForced(Location location) {
+    public static   Block getBlockAsyncForced(Location location) {
         if (location.getWorld().isChunkLoaded(location.getBlockX() >> 4, location.getBlockZ() >> 4)) {
             return location.getBlock();
         } else {
@@ -60,7 +60,6 @@ public final class BlockUtil {
             } catch (final Exception exception) {
                 exception.printStackTrace();
             }
-
             return null;
         }
     }
