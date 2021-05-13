@@ -66,7 +66,7 @@ public abstract class QuarPlugin extends JavaPlugin {
          */
         String name = commandInfo.name();
         /*
-        Register the command to Bukkit's command system, since QCommand imlpements Commadndxecutor
+        Register the command to Bukkit's command system, since QCommand implements CommandExecutor
          */
         registerCommand(name, command);
     }
