@@ -1,0 +1,4 @@
+main: dev.gardeningtool.example.QuarExample
+name: QuarExample
+version: 1.0.0
+authors: [Gardening_Tool, Tecnio]
