@@ -1,3 +1,8 @@
 package club.quar.config;
 
-public interface QuarConfig {}
+/**
+ * Interface the classes have to implement in order to utilize our config utils.
+ */
+public interface QuarConfig {
+
+}

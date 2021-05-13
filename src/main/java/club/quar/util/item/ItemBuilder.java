@@ -73,6 +73,7 @@ public class ItemBuilder {
     public ItemStack build() {
         ItemStack itemStack = new ItemStack(material, amount);
         ItemMeta meta = itemStack.getItemMeta();
+
         if (data != null) {
             itemStack.setData(data);
         }
@@ -88,12 +89,13 @@ public class ItemBuilder {
         if (itemFlags.size() > 0) {
             itemFlags.forEach(meta::addItemFlags);
         }
-        for(Map.Entry<Enchantment, Integer> entry : enchantMap.entrySet()) {
+        for (Map.Entry<Enchantment, Integer> entry : enchantMap.entrySet()) {
             itemStack.addUnsafeEnchantment(entry.getKey(), entry.getValue());
         }
+
         itemStack.setItemMeta(meta);
+
         return itemStack;
     }
-
 }
 

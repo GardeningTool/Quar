@@ -18,7 +18,7 @@ public class Request {
     /**
      * The response code will be -1 if it hasn't been set by the connection when Request#connect
      * is called. If the response code is -1 when Request#getResponseCode is called, it will throw
-     * an IllegalStateException, signifiying that the connection has not yet been made.
+     * an IllegalStateException, signifying that the connection has not yet been made.
      */
     private int responseCode = -1;
 
@@ -57,6 +57,7 @@ public class Request {
         if (responseCode == -1) {
             throw new IllegalStateException("A connection has not yet been made yet!");
         }
+
         return responseCode;
     }
 
@@ -68,6 +69,7 @@ public class Request {
     public JsonArray toJsonArray() throws IllegalStateException, IOException {
         String content = getRawContent();
         Gson gson = new Gson();
+
         return gson.fromJson(content, JsonArray.class);
     }
 
@@ -79,6 +81,7 @@ public class Request {
     public Map<?, ?> map() throws IllegalStateException, IOException {
         String content = getRawContent();
         Gson gson = new Gson();
+
         return gson.fromJson(content, Map.class);
     }
 
@@ -91,14 +94,18 @@ public class Request {
         if (responseCode == -1) {
             throw new IllegalStateException("A connection has not been made yet!");
         }
+
         InputStream inputStream = connection.getInputStream();
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
         BufferedReader reader = new BufferedReader(inputStreamReader);
         StringBuilder builder = new StringBuilder();
+
         String line;
         while ((line = reader.readLine()) != null) {
             builder.append(line);
         }
+
         return builder.toString();
     }
 }
