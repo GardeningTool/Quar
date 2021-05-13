@@ -4,7 +4,7 @@ import club.quar.command.QCommand;
 import club.quar.command.annotation.CommandInfo;
 import org.bukkit.command.CommandSender;
 
-@CommandInfo(name = "help", requiredPermission = "", requirePermission = false, async = true, requirePlayer = true)
+@CommandInfo(name = "help", async = true, requirePlayer = true)
 public class HelpCommand extends QCommand {
 
     @Override
