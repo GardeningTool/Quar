@@ -35,7 +35,7 @@ public class QuarConfigManager extends Manager<QuarConfig> {
         // Get the class of our QuarConfig class.
         Class<?> clazz = quarConfig.getClass();
 
-        // Loop thru all of the fields declared.
+        // Loop through all of the fields declared.
         for (Field field : clazz.getDeclaredFields()) {
             // If the field doesn't have our annotation skip it
             if (!field.isAnnotationPresent(ConfigField.class)) {

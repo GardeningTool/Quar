@@ -13,6 +13,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.Map;
 
+/**
+ * Taken from my NameMC library
+ */
 public class Request {
 
     /**
@@ -86,7 +89,7 @@ public class Request {
     }
 
     /**
-     * @return The response from NameMC, as a String
+     * @return The response from the target, as a String
      * @throws IllegalStateException If the connection has not yet been made
      * @throws IOException           If the BufferedReader fails to read the response
      */

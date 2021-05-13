@@ -66,9 +66,17 @@ public class InventoryBuilder {
      * @param itemStack The target ItemStack
      * @param begin The beginning of the range
      * @param end The end of the range
+     * @throws IllegalArgumentException If begin is less than 0
+     * @throws IllegalArgumentException If end is greater than the size of the inventory
      * @return The current InventoryBuilder instanc e
      */
-    public InventoryBuilder setRange(ItemStack itemStack, int begin, int end) {
+    public InventoryBuilder setRange(ItemStack itemStack, int begin, int end) throws IllegalArgumentException {
+        if (begin < 0) {
+            throw new IllegalArgumentException("Beginning is less than 0");
+        }
+        if (end > inventory.getSize()) {
+            throw new IllegalArgumentException("End is greater than inventory max size!");
+        }
         for(int i = begin; i < end; i++) {
             inventory.setItem(i, itemStack);
         }
@@ -84,6 +92,9 @@ public class InventoryBuilder {
         return this;
     }
 
+    /**
+     * @return The inventory
+     */
     public Inventory build() {
         return inventory;
     }
