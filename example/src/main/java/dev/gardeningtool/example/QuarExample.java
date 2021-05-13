@@ -3,6 +3,7 @@ package dev.gardeningtool.example;
 import club.quar.config.QuarConfig;
 import club.quar.config.annotation.ConfigField;
 import club.quar.plugin.QuarPlugin;
+import dev.gardeningtool.example.command.HelpCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
@@ -20,6 +21,8 @@ public class QuarExample extends QuarPlugin implements Listener, QuarConfig {
         Bukkit.getPluginManager().registerEvents(this, this);
         FileConfiguration configuration = getConfig();
         quarConfigManager.registerConfig(configuration, this);
+
+        registerCommand(new HelpCommand());
     }
 
     @EventHandler
