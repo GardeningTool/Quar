@@ -44,7 +44,7 @@ public final class BlockUtil {
      * @return The block in the given position.
      */
     @Deprecated
-    public static Block getBlockAsyncForced(Location location) {
+    public static   Block getBlockAsyncForced(Location location) {
         if (location.getWorld().isChunkLoaded(location.getBlockX() >> 4, location.getBlockZ() >> 4)) {
             return location.getBlock();
         } else {
