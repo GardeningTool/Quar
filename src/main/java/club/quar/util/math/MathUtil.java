@@ -1,5 +1,7 @@
 package club.quar.util.math;
 
+import club.quar.util.type.Tuple;
+
 import java.util.Collection;
 
 /**
@@ -82,7 +84,7 @@ public final class MathUtil {
      *
      * @See - https://en.wikipedia.org/wiki/Variance
      */
-    public double getVariance(final Collection<? extends Number> data) {
+    public static double getVariance(final Collection<? extends Number> data) {
         int count = 0;
 
         double sum = 0.0;
@@ -111,7 +113,7 @@ public final class MathUtil {
      * @See - https://en.wikipedia.org/wiki/Standard_deviation
      * @See - https://en.wikipedia.org/wiki/Variance
      */
-    public double getStandardDeviation(final Collection<? extends Number> data) {
+    public static double getStandardDeviation(final Collection<? extends Number> data) {
         final double variance = getVariance(data);
 
         return Math.sqrt(variance);
@@ -123,7 +125,23 @@ public final class MathUtil {
      * @param time Time in milliseconds.
      * @return Time in ticks.
      */
-    public int msToTicks(final double time) {
+    public static int msToTicks(final double time) {
         return (int) Math.round(time / 50.0F);
+    }
+
+    /**
+     * Returns how much should be added to the current position in order to move on the direction and movement distance given.
+     *
+     * @param yaw The angle in degrees.
+     * @param movement How much movement should be done.
+     * @return How much in x and z axis is needed in order to move in the direction given with the given distance.
+     */
+    public static Tuple<Double, Double> goInDirection(final double yaw, final double movement) {
+        final double direction = Math.toRadians(yaw);
+
+        final double moveX = -Math.sin(direction) * movement;
+        final double moveZ = Math.cos(direction) * movement;
+
+        return new Tuple<>(moveX, moveZ);
     }
 }
