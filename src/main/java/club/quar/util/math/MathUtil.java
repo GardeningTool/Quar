@@ -75,4 +75,55 @@ public final class MathUtil {
 
         return Math.sqrt(total);
     }
+
+    /**
+     * @param data - The set of data you want to find the variance from
+     * @return - The variance of the numbers.
+     *
+     * @See - https://en.wikipedia.org/wiki/Variance
+     */
+    public double getVariance(final Collection<? extends Number> data) {
+        int count = 0;
+
+        double sum = 0.0;
+        double variance = 0.0;
+
+        double average;
+
+        for (Number number : data) {
+            sum += number.doubleValue();
+            ++count;
+        }
+
+        average = sum / count;
+
+        for (Number number : data) {
+            variance += Math.pow(number.doubleValue() - average, 2.0);
+        }
+
+        return variance;
+    }
+
+    /**
+     * @param data - The set of numbers / data you want to find the standard deviation from.
+     * @return - The standard deviation using the square root of the variance.
+     *
+     * @See - https://en.wikipedia.org/wiki/Standard_deviation
+     * @See - https://en.wikipedia.org/wiki/Variance
+     */
+    public double getStandardDeviation(final Collection<? extends Number> data) {
+        final double variance = getVariance(data);
+
+        return Math.sqrt(variance);
+    }
+
+    /**
+     * Converts time in milliseconds to ticks in Minecraft which is equivalent of 50 milliseconds.
+     *
+     * @param time Time in milliseconds.
+     * @return Time in ticks.
+     */
+    public int msToTicks(final double time) {
+        return (int) Math.round(time / 50.0F);
+    }
 }
