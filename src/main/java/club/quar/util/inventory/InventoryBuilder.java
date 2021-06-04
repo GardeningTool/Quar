@@ -68,7 +68,7 @@ public class InventoryBuilder {
      * @param end The end of the range
      * @throws IllegalArgumentException If begin is less than 0
      * @throws IllegalArgumentException If end is greater than the size of the inventory
-     * @return The current InventoryBuilder instanc e
+     * @return The current InventoryBuilder instance
      */
     public InventoryBuilder setRange(ItemStack itemStack, int begin, int end) throws IllegalArgumentException {
         if (begin < 0) {
@@ -80,6 +80,16 @@ public class InventoryBuilder {
         for(int i = begin; i < end; i++) {
             inventory.setItem(i, itemStack);
         }
+        return this;
+    }
+
+    /**
+     * Sets the background of the inventory
+     * @param itemStack The ItemStack that will be the background
+     * @return The current InventoryBuilder instance
+     */
+    public InventoryBuilder setBackground(ItemStack itemStack) {
+        setRange(itemStack, 0, inventory.getSize());
         return this;
     }
 
