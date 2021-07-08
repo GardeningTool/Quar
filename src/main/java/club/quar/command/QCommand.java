@@ -65,9 +65,8 @@ public abstract class QCommand implements CommandExecutor {
              * If the user wanted to command to be only ran by a player and the entity
              * who ran it was not a player log that the command was executed by a non player.
              */
-            if (commandInfo.requirePermission() && !(sender instanceof Player)) {
-                System.out.println("This command must be executed as a player!");
-                return;
+            if (commandInfo.requirePlayer() && !(sender instanceof Player)) {
+                sender.sendMessage("This command must be executed as a player!");
             }
 
             // If the user requested a permission for the command check if they have it and or else tell the player they don't have the permissions.
