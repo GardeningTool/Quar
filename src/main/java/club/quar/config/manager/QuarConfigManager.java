@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.util.Collection;
 
 public class QuarConfigManager extends Manager<QuarConfig> {
 
@@ -58,7 +59,20 @@ public class QuarConfigManager extends Manager<QuarConfig> {
 
             // Save the fields value on the config file.
             try {
-                field.set(quarConfig, configuration.get(path));
+                Class<?> type = field.getType();
+                if (type.equals(int.class)) {
+                    field.set(quarConfig, configuration.getInt(path));
+                } else if (type.equals(double.class)) {
+                    field.set(quarConfig, configuration.getDouble(path));
+                } else if (type.equals(boolean.class)) {
+                    field.set(quarConfig, configuration.getBoolean(path));
+                } else if (type.equals(long.class)) {
+                    field.set(quarConfig, configuration.getLong(path));
+                } else if (type.isInstance(Collection.class)) {
+                    field.set(quarConfig, configuration.getList(path));
+                } else {
+                    field.set(quarConfig, configuration.get(path));
+                }
             } catch (Exception exc) {
                 exc.printStackTrace();
             }
