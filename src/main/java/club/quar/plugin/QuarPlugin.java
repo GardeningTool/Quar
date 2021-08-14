@@ -16,7 +16,7 @@ public abstract class QuarPlugin extends JavaPlugin {
 
     @Getter
     protected static QuarPlugin instance;
-    protected final QuarConfigManager quarConfigManager = new QuarConfigManager();
+    protected final QuarConfigManager quarConfigManager = new QuarConfigManager(this);
     protected final PluginManager pluginManager = Bukkit.getPluginManager();
 
     public QuarPlugin() {

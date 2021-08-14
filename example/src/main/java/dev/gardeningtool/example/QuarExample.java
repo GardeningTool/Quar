@@ -14,17 +14,16 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class QuarExample extends QuarPlugin implements Listener, QuarConfig {
 
-    private final ExampleInventory inventory = new ExampleInventory();
+//    private final ExampleInventory inventory = new ExampleInventory();
 
     @ConfigField(path = "messages.joinMessage")
-    private String joinMessage;
+    private String joinMessage = "Welcome to the server, %s";
 
     @Override
     public void onEnable() {
-        saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(this, this);
-        FileConfiguration configuration = getConfig();
-        quarConfigManager.registerConfig(configuration, this);
+
+        quarConfigManager.registerConfig("config.yml", this);
 
         registerCommand(new HelpCommand());
     }
@@ -33,7 +32,7 @@ public class QuarExample extends QuarPlugin implements Listener, QuarConfig {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         event.setJoinMessage(String.format(joinMessage, player.getName()));
-        player.openInventory(inventory.build(player));
+//        player.openInventory(inventory.build(player));
     }
 
 }
